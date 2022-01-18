@@ -5,6 +5,26 @@ export const COLORS = [
         shininess: 0
     },
     {
+        texture: 'img/maria_.jpg',
+        size: [3, 3, 3],
+        shininess: 0
+    },
+    {
+        texture: 'img/maria2_.jpg',
+        size: [3, 3, 3],
+        shininess: 0
+    },
+    {
+        texture: 'img/maria3_.jpg',
+        size: [3, 3, 3],
+        shininess: 0
+    },
+    {
+        texture: 'img/toxa_.jpg',
+        size: [3, 3, 3],
+        shininess: 0
+    },
+    {
         color: '131417'
     },
 
