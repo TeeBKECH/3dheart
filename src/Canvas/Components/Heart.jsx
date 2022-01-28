@@ -3,7 +3,7 @@ import { useLoader, useFrame } from 'react-three-fiber';
 import { useRef } from 'react';
 
 const Heart = (props) => {
-  const {scene: theModel} = useLoader(GLTFLoader, 'heart.glb');
+  const {scene: theModel} = useLoader(GLTFLoader, 'heart.gltf');
   const chair = useRef(theModel);
 
   useFrame((state, delta) => (chair.current.rotation.y += 0.005))
