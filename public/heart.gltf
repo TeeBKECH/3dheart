@@ -18,7 +18,7 @@
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "Text.002_CUText.002",
+            "name" : "text3",
             "rotation" : [
                 0.7071068286895752,
                 0,
@@ -28,7 +28,7 @@
         },
         {
             "mesh" : 1,
-            "name" : "Text.001_CUText.001",
+            "name" : "text1",
             "rotation" : [
                 0.7071068286895752,
                 0,
@@ -38,7 +38,7 @@
         },
         {
             "mesh" : 2,
-            "name" : "Text_CUText",
+            "name" : "text2",
             "rotation" : [
                 0.7071068286895752,
                 0,
@@ -48,7 +48,7 @@
         },
         {
             "mesh" : 3,
-            "name" : "Sphere_Sphere.004",
+            "name" : "heart",
             "rotation" : [
                 0.7071068286895752,
                 0,
