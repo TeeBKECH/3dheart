@@ -7,7 +7,7 @@ import Heart from "./Components/Heart";
 
 extend({OrbitControls});
 
-const Scene = () => {
+const Scene = (newMaterialOpt) => {
 
   const {
     scene, 
@@ -15,25 +15,24 @@ const Scene = () => {
     gl: {domElement, shadowMap}
   } = useThree();
 
-  camera.position.set(0, 2, 4);
+  camera.position.set(0, 1, 4);
 
   useEffect(() => {
     const directionalLight = scene.children[1];
-    scene.background = new THREE.Color(0xf1f1f1);
-    scene.fog = new THREE.Fog(0xf1f1f1, 20, 100);
+    scene.background = new THREE.Color(0x7de1ff);
+    scene.fog = new THREE.Fog(0x7de1ff, 20, 100);
     camera.fov = 50;
-    camera.near = 20;
-    directionalLight.shadow.mapSize = new THREE.Vector2(1024, 1024)
+    directionalLight.shadow.mapSize = new THREE.Vector2(1024, 1024);
     shadowMap.enabled = true;
-    console.log(camera);
-  }, [scene, camera, shadowMap]);
+    console.log(scene);
+  }, []);
 
   return (
     <>
       <orbitControls args={[camera, domElement]} />
       <hemisphereLight 
-        skyColor = {new THREE.Color(0x47ffd7)}
-        groundColor={new THREE.Color(0x47ffd7)}
+        skyColor = {new THREE.Color(0xffffff)}
+        groundColor={new THREE.Color(0xffffff)}
         intensity={0.61}
         position={[0, 50, 0]}
       />
@@ -44,7 +43,7 @@ const Scene = () => {
         castShadow
       />
       <Suspense fallback={null}>
-        <Heart position={[0, 0, 0]} />
+        <Heart newMaterialOpt={newMaterialOpt} />
         <Floor />
       </Suspense>
     </>

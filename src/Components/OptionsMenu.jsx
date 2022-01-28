@@ -2,20 +2,17 @@ import React from "react";
 
 const options = [
     {
-        name: "legs",
+        name: "text1",
         img:"https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/legs.svg"},
     {
-        name:"cushions",
+        name:"text2",
         img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/cushions.svg"},
     {
-        name:"base",
+        name:"text3",
         img:"https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/base.svg"},
     {
-        name:"supports",
+        name:"heart",
         img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/supports.svg"},
-    {
-        name:"back",
-        img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/back.svg"},
     ]
 
 export const OptionsMenu = ({activeOption, setActiveOption}) => {

@@ -1,17 +1,63 @@
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useLoader, useFrame } from 'react-three-fiber';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
+import * as THREE from 'three';
 
-const Heart = (props) => {
+const INITIAL_MTL = new THREE.MeshPhongMaterial({
+  color: new THREE.Color(0x000000),
+  shininess: 30
+});
+
+const INITIAL_MAP = [
+  {childID: "heart", mtl: INITIAL_MTL},
+  {childID: "text1", mtl: INITIAL_MTL},
+  {childID: "text2", mtl: INITIAL_MTL},
+  {childID: "text3", mtl: INITIAL_MTL}
+];
+
+const initColor = (parent, type, mtl) => {
+  parent.traverse(o => {
+    if (o.isMesh && o.name.includes(type)) {
+      o.castShadow = true;
+      o.receiveShadow = true;
+      o.material = mtl;
+      o.nameID = type;
+    }
+  });
+}
+
+const Heart = (newMaterialOpt) => {
   const {scene: theModel} = useLoader(GLTFLoader, 'heart.gltf');
-  const chair = useRef(theModel);
+  const heart = useRef(theModel);
 
-  useFrame((state, delta) => (chair.current.rotation.y += 0.005))
+  useEffect(() =>
+    void setMaterial(newMaterialOpt.activeOption, newMaterialOpt.newMTL)
+  , [newMaterialOpt.newMTL]);
+
+  useEffect(() => {
+    if (theModel) {
+      for (let object of INITIAL_MAP) {
+        initColor(theModel, object.childID, object.mtl);
+      }
+    }
+  }, [theModel])
+
+  const setMaterial = (type, mtl) => {
+    theModel.traverse(o => {
+      if (o.isMesh && o.nameID != null) {
+        if (o.nameID === type) {
+          o.material = mtl;
+        }
+      }
+    });
+  }
+
+  useFrame((state, delta) => (heart.current.rotation.y += 0.005))
 
   return (
     <primitive
-      {...props}
-      ref={chair}
+      position={[0, 0, 0]}
+      ref={heart}
       object={theModel}
       scale={[1, 1, 1]}
       rotation={[0, 0, 0]}
