@@ -26,9 +26,11 @@ const initColor = (parent, type, mtl) => {
   });
 }
 
-const Heart = (newMaterialOpt) => {
+const Heart = ({newMaterialOpt}) => {
   const {scene: theModel} = useLoader(GLTFLoader, 'heart.gltf');
   const heart = useRef(theModel);
+
+  useFrame((state, delta) => (heart.current.rotation.y += 0.005));
 
   useEffect(() =>
     void setMaterial(newMaterialOpt.activeOption, newMaterialOpt.newMTL)
@@ -52,7 +54,7 @@ const Heart = (newMaterialOpt) => {
     });
   }
 
-  useFrame((state, delta) => (heart.current.rotation.y += 0.005))
+  console.log(newMaterialOpt);
 
   return (
     <primitive

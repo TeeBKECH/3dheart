@@ -7,15 +7,13 @@ import Heart from "./Components/Heart";
 
 extend({OrbitControls});
 
-const Scene = (newMaterialOpt) => {
+const Scene = ({newMaterialOpt}) => {
 
   const {
     scene, 
     camera,
     gl: {domElement, shadowMap}
   } = useThree();
-
-  camera.position.set(0, 1, 4);
 
   useEffect(() => {
     const directionalLight = scene.children[1];
@@ -24,7 +22,7 @@ const Scene = (newMaterialOpt) => {
     camera.fov = 50;
     directionalLight.shadow.mapSize = new THREE.Vector2(1024, 1024);
     shadowMap.enabled = true;
-    console.log(scene);
+    // console.log(scene);
   }, []);
 
   return (
