@@ -16,9 +16,17 @@ const Scene = ({newMaterialOpt}) => {
   } = useThree();
 
   useEffect(() => {
+
+    const bgLoader = new THREE.CubeTextureLoader();
+    bgLoader.setPath( 'bg/' );
+    console.log(bgLoader);
+    let textureCube = bgLoader.load( [ 'px.jpg', 'nx.jpg', 'py.jpg', 'ny.jpg', 'pz.jpg', 'nz.jpg' ] );
+    textureCube.encoding = THREE.sRGBEncoding;
+    scene.background = textureCube;
+
     const directionalLight = scene.children[1];
-    scene.background = new THREE.Color(0x7de1ff);
-    scene.fog = new THREE.Fog(0x7de1ff, 20, 100);
+    // scene.background = new THREE.Color(0x7de1ff);
+    // scene.fog = new THREE.Fog(0x7de1ff, 20, 100);
     camera.fov = 50;
     directionalLight.shadow.mapSize = new THREE.Vector2(1024, 1024);
     shadowMap.enabled = true;
@@ -42,7 +50,7 @@ const Scene = ({newMaterialOpt}) => {
       />
       <Suspense fallback={null}>
         <Heart newMaterialOpt={newMaterialOpt} />
-        <Floor />
+        {/* <Floor /> */}
       </Suspense>
     </>
   );
