@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/public/bg/venice_sunset_16k.hdr
+/public/bg/venice_sunset_4k.hdr
 /node_modules
 /.pnp
 .pnp.js
