@@ -27,12 +27,12 @@ const App = () => {
 
       newMTL = new THREE.MeshPhongMaterial({
         map: txt,
-        shininess: color.shininess ? color.shininess : 10
+        shininess: color.shininess ? color.shininess : 40
       });
     } else {
       newMTL = new THREE.MeshPhongMaterial({
         color: parseInt("0x" + color.color),
-        shininess: color.shininess ? color.shininess : 10
+        shininess: color.shininess ? color.shininess : 40
       });
     }
 

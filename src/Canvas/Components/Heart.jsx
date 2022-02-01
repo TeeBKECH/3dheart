@@ -5,7 +5,7 @@ import * as THREE from 'three';
 
 const INITIAL_MTL = new THREE.MeshPhongMaterial({
   color: new THREE.Color(0x000000),
-  shininess: 30
+  shininess: 40
 });
 
 const INITIAL_MAP = [
@@ -54,7 +54,7 @@ const Heart = ({newMaterialOpt}) => {
     });
   }
 
-  console.log(newMaterialOpt);
+  // console.log(newMaterialOpt);
 
   return (
     <primitive
