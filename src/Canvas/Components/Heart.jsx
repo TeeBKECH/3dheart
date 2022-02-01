@@ -4,7 +4,7 @@ import { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 
 const INITIAL_MTL = new THREE.MeshPhongMaterial({
-  color: new THREE.Color(0x000000),
+  color: new THREE.Color(0xb40000),
   shininess: 40
 });
 

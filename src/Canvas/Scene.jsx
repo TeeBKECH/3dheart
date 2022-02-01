@@ -27,7 +27,6 @@ const Scene = ({newMaterialOpt}) => {
     const directionalLight = scene.children[1];
     // scene.background = new THREE.Color(0x7de1ff);
     // scene.fog = new THREE.Fog(0x7de1ff, 20, 100);
-    camera.fov = 50;
     directionalLight.shadow.mapSize = new THREE.Vector2(1024, 1024);
     shadowMap.enabled = true;
     // console.log(scene);
@@ -38,7 +37,7 @@ const Scene = ({newMaterialOpt}) => {
       <orbitControls args={[camera, domElement]} />
       <hemisphereLight 
         skyColor = {new THREE.Color(0xffffff)}
-        groundColor={new THREE.Color(0xffffff)}
+        groundColor={new THREE.Color(0x000000)}
         intensity={0.61}
         position={[0, 50, 0]}
       />

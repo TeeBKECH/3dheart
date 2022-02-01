@@ -44,16 +44,16 @@ const App = () => {
 
   return (
     <React.Fragment>
-      <OptionsMenu
+      {/* <OptionsMenu
         activeOption={activeOption}
         setActiveOption={setActiveOption}
-      />
+      /> */}
 
       <Canvas id="rtfCanvas">
         <Scene newMaterialOpt={newMaterialOpt} />
       </Canvas>
 
-      <div className="controls">
+      {/* <div className="controls">
         <div className="info">
           <div className="info__message">
             <p>
@@ -69,7 +69,7 @@ const App = () => {
         <h1 className="frame__title">
           3D Model Color Customizer App with React-three-fiber
         </h1>
-      </div>
+      </div> */}
 
     </React.Fragment>
   );
