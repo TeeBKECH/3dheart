@@ -12,7 +12,6 @@ const INITIAL_MAP = [
   {childID: "heart", mtl: INITIAL_MTL},
   {childID: "text1", mtl: INITIAL_MTL},
   {childID: "text2", mtl: INITIAL_MTL},
-  {childID: "text3", mtl: INITIAL_MTL}
 ];
 
 const initColor = (parent, type, mtl) => {
@@ -58,11 +57,11 @@ const Heart = ({newMaterialOpt}) => {
 
   return (
     <primitive
-      position={[0, 0, 0]}
+      position={[0, -0.5, 0]}
       ref={heart}
       object={theModel}
       scale={[1, 1, 1]}
-      rotation={[0, 0, 0]}
+      rotation={[0, Math.PI, 0]}
       receiveShadow
       castShadow
     >

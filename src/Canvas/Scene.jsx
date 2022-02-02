@@ -16,6 +16,9 @@ const Scene = ({newMaterialOpt}) => {
     gl: {domElement, shadowMap}
   } = useThree();
 
+  camera.position.set(-3, 0, -3);
+  // camera.lookAt(0,0,0);
+
   useEffect(() => {
 
     // const bgLoader = new THREE.CubeTextureLoader();
