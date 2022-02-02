@@ -45,7 +45,7 @@ const Scene = ({newMaterialOpt}) => {
       <directionalLight 
         color={new THREE.Color(0xffffff)}
         intensity={0.54}
-        position={[-8, 5, 8]}
+        position={[22, 5, 8]}
         castShadow
       />
       <Suspense fallback={null}>
@@ -53,7 +53,7 @@ const Scene = ({newMaterialOpt}) => {
         {/* <Floor /> */}
         <Environment
           background // Whether to affect scene.background
-          files={'ballroom_4k.hdr'} // Array of cubemap files OR single equirectangular file
+          files={'venice_sunset_4k.hdr'} // Array of cubemap files OR single equirectangular file
           path={'/bg/hdr/'} // Path to the above file(s)
           preset={null} // Preset string (overrides files and path)
           scene={scene} // adds the ability to pass a custom THREE.Scene
